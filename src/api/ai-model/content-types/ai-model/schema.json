@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_models",
+  "info": {
+    "singularName": "ai-model",
+    "pluralName": "ai-models",
+    "displayName": "AiModel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "aiModelName": {
+      "type": "string"
+    },
+    "defaultPrompt": {
+      "type": "text"
+    },
+    "isFeatured": {
+      "type": "boolean"
+    },
+    "userImageUpload": {
+      "type": "boolean"
+    },
+    "style": {
+      "type": "boolean"
+    },
+    "avatar": {
+      "type": "boolean"
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "banner": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
