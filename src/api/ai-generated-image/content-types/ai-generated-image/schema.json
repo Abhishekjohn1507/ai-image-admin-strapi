@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "ai_generated_images",
+  "info": {
+    "singularName": "ai-generated-image",
+    "pluralName": "ai-generated-images",
+    "displayName": "AiGeneratedImage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "userEmail": {
+      "type": "string"
+    },
+    "ImageUrl": {
+      "type": "string"
+    }
+  }
+}

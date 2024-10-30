@@ -1,72 +1,5 @@
 import type { Struct, Schema } from '@strapi/strapi';
 
-export interface ApiAiModelAiModel extends Struct.CollectionTypeSchema {
-  collectionName: 'ai_models';
-  info: {
-    singularName: 'ai-model';
-    pluralName: 'ai-models';
-    displayName: 'AiModel';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Schema.Attribute.String;
-    aiModelName: Schema.Attribute.String;
-    defaultPrompt: Schema.Attribute.Text;
-    isFeatured: Schema.Attribute.Boolean;
-    userImageUpload: Schema.Attribute.Boolean;
-    style: Schema.Attribute.Boolean;
-    avatar: Schema.Attribute.Boolean;
-    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::ai-model.ai-model'
-    > &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiUserListUserList extends Struct.CollectionTypeSchema {
-  collectionName: 'user_lists';
-  info: {
-    singularName: 'user-list';
-    pluralName: 'user-lists';
-    displayName: 'UserList';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    userName: Schema.Attribute.String;
-    userEmail: Schema.Attribute.Email & Schema.Attribute.Unique;
-    credits: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<10>;
-    createdAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    publishedAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::user-list.user-list'
-    > &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Struct.CollectionTypeSchema {
   collectionName: 'files';
   info: {
@@ -562,6 +495,104 @@ export interface PluginUsersPermissionsUser
   };
 }
 
+export interface ApiAiGeneratedImageAiGeneratedImage
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_generated_images';
+  info: {
+    singularName: 'ai-generated-image';
+    pluralName: 'ai-generated-images';
+    displayName: 'AiGeneratedImage';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    userEmail: Schema.Attribute.String;
+    ImageUrl: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ai-generated-image.ai-generated-image'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiAiModelAiModel extends Struct.CollectionTypeSchema {
+  collectionName: 'ai_models';
+  info: {
+    singularName: 'ai-model';
+    pluralName: 'ai-models';
+    displayName: 'AiModel';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Schema.Attribute.String;
+    aiModelName: Schema.Attribute.String;
+    defaultPrompt: Schema.Attribute.Text;
+    isFeatured: Schema.Attribute.Boolean;
+    userImageUpload: Schema.Attribute.Boolean;
+    style: Schema.Attribute.Boolean;
+    avatar: Schema.Attribute.Boolean;
+    icon: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    banner: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::ai-model.ai-model'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiUserListUserList extends Struct.CollectionTypeSchema {
+  collectionName: 'user_lists';
+  info: {
+    singularName: 'user-list';
+    pluralName: 'user-lists';
+    displayName: 'UserList';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    userName: Schema.Attribute.String;
+    userEmail: Schema.Attribute.Email & Schema.Attribute.Unique;
+    credits: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<10>;
+    createdAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    publishedAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-list.user-list'
+    > &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface AdminPermission extends Struct.CollectionTypeSchema {
   collectionName: 'admin_permissions';
   info: {
@@ -934,8 +965,6 @@ export interface AdminTransferTokenPermission
 declare module '@strapi/strapi' {
   export module Public {
     export interface ContentTypeSchemas {
-      'api::ai-model.ai-model': ApiAiModelAiModel;
-      'api::user-list.user-list': ApiUserListUserList;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
@@ -946,6 +975,9 @@ declare module '@strapi/strapi' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::ai-generated-image.ai-generated-image': ApiAiGeneratedImageAiGeneratedImage;
+      'api::ai-model.ai-model': ApiAiModelAiModel;
+      'api::user-list.user-list': ApiUserListUserList;
       'admin::permission': AdminPermission;
       'admin::user': AdminUser;
       'admin::role': AdminRole;
